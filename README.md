@@ -28,9 +28,17 @@
   4. git branch -M main
   5. git remote add origin https://github.com/NizarMaarouf/stam.git
   6. git push -u origin main
- 7. Create Rating and Product Component
+7. Create Rating and Product Component
    1. create components/Rating.js
    2. create div.rating
    3. style div.rating ,span and last span
    4. Create Product Component
    5. Use Rating component
+8 Build Product Screen
+   1. Install react-router-dom
+   2. Use BrowserRouter and Router for Home Screen
+   3. CraeteHomeScreen.js
+   4. Add product list code there
+   5. Craete ProductScreen.js
+   6. Add new Router from product details to App.js
+   7. Create 3 colums for product image , info and action
