@@ -1,4 +1,4 @@
-# Amazona ECommerce Website
+# Amazona Marketing App
 
 1. Introduction to this course
    1. what you will build
