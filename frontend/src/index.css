@@ -269,9 +269,16 @@ img.large{
   background-color:#ffe0e0e0;
 }
 
+.alert.alert-da{
+  font-size: 2rem;
+  font-weight: 800;
+  color:#a02020;
+  background-color:#ffe0e0e0;
+}
+
 .fas{
   position: relative;
-  top:10rem;
+  top:10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -281,7 +288,7 @@ img.large{
 
 h3{
   position: relative;
-  top:10rem;
+  top:10vh;
   display: flex;
   justify-content: center;
   align-items: center;

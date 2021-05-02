@@ -1,16 +1,33 @@
-/* eslint-disable react/jsx-no-undef */
- import Rating from '../components/Rating'
-import React from 'react'
-import data from "../data";
+import Rating from '../components/Rating'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { detailsProduct } from '../action/productActions';
 
 export default function ProductScreen(props) {
-  const product = data.products.find((x) => x._id === props.match.params.id);
-  if(!product){
-    return <div>Product Not Found</div>
-  }
+  // const product = data.products.find((x) => x._id === props.match.params.id);
+  const dispatch = useDispatch();
+  const productId = props.match.params.id;
+  const productDetails = useSelector( state => state.productDetails);
+  const {loading , error , product} = productDetails;
+  // if(!product){
+  //   return <div>Product Not Found</div>
+  // }
+   useEffect(() => {
+     dispatch(detailsProduct(productId));
+
+   }, [dispatch , productId]);
+
   return (
-    <div>
+     <div>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="da">{error}</MessageBox>
+      ) : (
+         <div>
     <Link className="link" to="/">Back To Result</Link>
       <div className="row top">
         <div className="col-2">
@@ -62,5 +79,7 @@ export default function ProductScreen(props) {
         </div>
       </div>
     </div>
-  )
+      )}
+    </div>
+  );
 }
