@@ -1,8 +1,9 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
-
 import productListReducer from './reducers/productReducers';
+
 const initialState = {};
+
 const reducer = combineReducers({
   productList: productListReducer,
 });
@@ -11,7 +12,7 @@ const composeEnhancer =
 const store = createStore(
   reducer,
   initialState,
-  composeEnhancer(applyMiddleware(thunk))
-  );
+  composeEnhancer(applyMiddleware(thunk)),
+);
 
 export default store;
